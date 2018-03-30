@@ -1,7 +1,11 @@
 
 # coding: utf-8
 
+<<<<<<< HEAD
 # In[1]:
+=======
+# In[28]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 import pandas as pd
@@ -17,7 +21,11 @@ y = np.where(y == 'Iris-setosa', -1, 1)
 X = df.iloc[0:100, [0, 2]].values
 
 
+<<<<<<< HEAD
 # In[2]:
+=======
+# In[29]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 
@@ -87,7 +95,11 @@ class AdalineGD(object):
             errors = (y - output)
             #更新原理见博客 https://mp.csdn.net/postedit/79668201
             self.w_[1:] += self.eta * (X.T).dot(errors)
+<<<<<<< HEAD
             self.w_[0] += self.eta * errors.sum()
+=======
+            self.w_[0] = self.eta * errors.sum()
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
             cost = (errors ** 2 ).sum() / 2 #平方误差的总和 Sum of Squred Errors
             self.cost_.append(cost)
         return self
@@ -106,7 +118,11 @@ class AdalineGD(object):
             
 
 
+<<<<<<< HEAD
 # In[3]:
+=======
+# In[30]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 #不同的eta对应的不同迭代次数的收敛性
@@ -128,7 +144,11 @@ ax[1].set_title("Adaline---learning rate 0.0001")
 plt.show()
 
 
+<<<<<<< HEAD
 # In[4]:
+=======
+# In[31]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 X_std = np.copy(X)
@@ -137,7 +157,11 @@ X_std [:, 0] = (X_std[:, 0] - X_std[:, 0].mean()) / X[:, 0].std()
 X_std [:, 1] = (X_std[:, 1] - X_std[:, 1].mean()) / X[:, 1].std()
 
 
+<<<<<<< HEAD
 # In[5]:
+=======
+# In[32]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 from matplotlib.colors import ListedColormap
@@ -181,7 +205,11 @@ def plot_decision_regions(X, y, classifier, resolution=0.02):
     
 
 
+<<<<<<< HEAD
 # In[6]:
+=======
+# In[36]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 ada = AdalineGD(n_iter = 15, eta = 0.01)
@@ -209,7 +237,11 @@ plt.show()
 
 # Large scale machine learning and stochastic gradient descent
 
+<<<<<<< HEAD
 # In[7]:
+=======
+# In[67]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 class AdalineSGD(object):
@@ -233,9 +265,12 @@ class AdalineSGD(object):
             avg_cost = sum(cost) / len(y)
             self.cost_.append(avg_cost)
         return self
+<<<<<<< HEAD
     # If we want to update our model, for example, in an online learning scenario with
     # streaming data, we could simply call the partial_fit method on individual
     # samples—for instance ada.partial_fit(X_std[0, :], y[0]) 
+=======
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
     def partial_fit (self,X,y):
         #
         if not self.w_initialized:
@@ -280,7 +315,11 @@ class AdalineSGD(object):
        
 
 
+<<<<<<< HEAD
 # In[8]:
+=======
+# In[68]:
+>>>>>>> ca0107ad881d17fa20a10d982a2d919b721650de
 
 
 ada = AdalineSGD(n_iter=15, eta=0.01, random_state=1)
